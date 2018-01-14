@@ -71,11 +71,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>$(SolutionDir)\third-party\sfml\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\third-party\sfml\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)\third-party\sfml\lib;$(SolutionDir)\third-party\thor\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <IncludePath>$(SolutionDir)\third-party\sfml\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)\third-party\sfml\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)\third-party\sfml\lib;$(SolutionDir)\third-party\thor\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -126,7 +126,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\graphics\Application.cpp" />
     <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\graphics\Application.hpp" />
+    <ClInclude Include="src\utils\ResourceHolder.hpp" />
+    <ClInclude Include="src\utils\ResourceIdentifiers.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
